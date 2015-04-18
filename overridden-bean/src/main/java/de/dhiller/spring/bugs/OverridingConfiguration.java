@@ -1,6 +1,6 @@
 package de.dhiller.spring.bugs;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import de.dhiller.spring.bugs.overriding_bean.OverridingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,11 +10,10 @@ import org.springframework.context.annotation.Primary;
 @ComponentScan("de.dhiller.spring.bugs")
 public class OverridingConfiguration {
 
-    @Autowired
-    private MyBean myBean;
+    private MyBean myBean = new OverridingBean();
 
     @Primary
-    @Bean(name="myBean")
+    @Bean(name = "myBean")
     public MyBean myBean() {
         return myBean;
     }
