@@ -8,18 +8,8 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("de.dhiller.spring.bugs.original")
 public class OriginalConfiguration {
 
-    @Bean
+    @Bean(name = "bean")
     public MyBean originalBean() {
-        return new OriginalBean();
-    }
-    
-    @Bean
-    public MyBean originalBean2() {
-        return new OriginalBean();
-    }
-    
-    @Bean
-    public MyBean originalBean3() {
         return new OriginalBean();
     }
 
